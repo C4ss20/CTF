@@ -1,0 +1,28 @@
+# Local editor and Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+
+# Credentials and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+id_rsa*
+
+# Potentially sensitive captures
+*.pcap
+*.pcapng
+*.har
+*.nessus
+
+# Temporary scratch space
+tmp/
+scratch/
