@@ -9,13 +9,14 @@ A collection of CTF challenges I have solved, documenting the **investigation pr
 | Challenge | Event | Topics | Outcome | Write-up |
 | --- | --- | --- | --- | --- |
 | **Más allá de lo visible** | TheM4rv3ls CTF | OSINT, geolocation, GitHub discovery, encoding and cryptography | Flag verified | [Read walkthrough](challenges/mas-alla-de-lo-visible/README.md) |
+| **Intrusión en S.W.O.R.D.** | TheM4rv3ls CTF | Web log forensics, encoding detection, Braille decoding | Flag recovered; original archive not retained | [Read walkthrough](challenges/intrusion-en-sword/README.md) |
 
 ## What these write-ups demonstrate
 
-- Correlating publicly available clues into testable hypotheses.
+- Correlating clues from public sources and challenge-provided artifacts into testable hypotheses.
 - Explaining how each clue supports or rejects a testable hypothesis.
 - Distinguishing **encoding**, **encryption**, and plain-text identifiers.
-- Reproducing transformations with short, dependency-free Python scripts.
+- Providing small, dependency-free Python helpers for repeatable analysis.
 - Documenting verification methods and any gaps in retained proof transparently.
 
 ## Documentation and verification
@@ -24,7 +25,7 @@ I solved the challenges documented in this repository. Some original session scr
 
 Where possible, challenge details, flags, and decoding steps are rechecked against public CTF materials or with reproducible local scripts. These references **validate the explanation**, but do not serve as independent proof of my original solve. I do not present anyone else's screenshots or recordings as my own.
 
-The original challenge materials belong to their creators.
+The original challenge materials belong to their creators. The challenge archives and source screenshots are not redistributed here.
 
 ## Future challenges
 
@@ -36,10 +37,14 @@ More write-ups from the same CTF will be added as their details are documented a
 CTF/
 ├── README.md
 └── challenges/
-    └── mas-alla-de-lo-visible/
+    ├── mas-alla-de-lo-visible/
+    │   ├── README.md
+    │   └── scripts/
+    │       └── decode_clues.py
+    └── intrusion-en-sword/
         ├── README.md
         └── scripts/
-            └── decode_clues.py
+            └── triage_logs.py
 ```
 
 The destination repository may contain unrelated files outside this documentation tree; these write-ups do not modify or remove them.
