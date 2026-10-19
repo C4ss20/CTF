@@ -4,13 +4,11 @@
 
 > **Spoiler warning:** this document contains the flag and the decoded credentials for a *separate follow-up puzzle*.
 >
-> **Provenance:** reconstructed from the supplied screenshots and [video walkthrough](https://www.youtube.com/watch?v=zk36oU2tL-Q&list=PLDo9DMLZyP6ki_F4Jv4NTOjFOnYHGon0y&index=2), then checked against the challenge creator's [public GitHub repository](https://github.com/DarthAshmed/11-07-2023-Toronto). Evidence links point to the original walkthrough video; the steps below should not be interpreted as claims of a separate, independently recorded solve.
+> **Documentation note:** I solved this CTF challenge but did not retain a complete set of screenshots from my original session. This is a reconstructed write-up, with challenge facts and the flag checked against the [original public CTF repository](https://github.com/DarthAshmed/11-07-2023-Toronto). Those public materials validate the technical details, not my personal completion history.
 
 ## Objective
 
 Track interdimensional anomalies across publicly accessible websites and social media, correlate their clues, and locate the hidden CTF flag.
-
-*Visual evidence: [Original challenge prompt — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=2s).*
 
 ## Investigation summary
 
@@ -25,15 +23,11 @@ Track interdimensional anomalies across publicly accessible websites and social 
 
 ## 1. Open-source reconnaissance: Instagram
 
-The challenge description directs the investigator to the public Instagram account [`anomalies_tracker`](https://www.instagram.com/anomalies_tracker/). The supplied capture shows three posts and a story highlight named *pista*.
-
-*Visual evidence: [Instagram account overview — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=15s).*
+The challenge description directs the investigator to the public Instagram account [`anomalies_tracker`](https://www.instagram.com/anomalies_tracker/). The challenge's Instagram clues consist of three posts and a story highlight named *pista*.
 
 ### 1.1 Extract a keyword
 
 The first post states that access to the archives requires the secret key **`Photon`**. Record its exact spelling and capitalization for potential decryption work.
-
-*Visual evidence: [Instagram post showing the Photon keyword — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=23s).*
 
 ### 1.2 Identify coordinates
 
@@ -45,13 +39,9 @@ The second post gives the last reported signal for Carol as:
 
 Plotting these coordinates using a public mapping service places the location in **Toronto, Canada**. This supplies the geographical component of the later repository name.
 
-*Visual evidence: [Post with geolocation clue — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=40s).*
-
 ### 1.3 Identify the date
 
 The third post mentions anomalies in Hala and displays **`11/07/2023`**. In combination with the masked GitHub pattern, the repository uses the date as **`11-07-2023`**. The month/day interpretation is not necessary; the critical detail is the literal date ordering reproduced in the repository name.
-
-*Visual evidence: [Post with date clue — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=55s).*
 
 ### 1.4 Investigate the story highlight
 
@@ -62,8 +52,6 @@ https://github.com/DarthAshmed/***-***-20***-T****o
 ```
 
 The prompt also indicates that part of the address is missing and that the images can help reconstruct it.
-
-*Visual evidence: [Story highlighting the masked GitHub URL — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=80s).*
 
 **Working hypothesis:** the hidden repository name combines the observed date and location.
 
@@ -89,8 +77,6 @@ This candidate is testable: visiting the repository reveals a README with the sa
 
 The [repository's root `README.md`](https://github.com/DarthAshmed/11-07-2023-Toronto/blob/main/README.md) contains a congratulatory message and the challenge flag.
 
-*Visual evidence: [Flag in the original GitHub README — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=176s).*
-
 ```text
 MrMarvel{aed5fe6c0a87d4e403b14c0c888ea199}
 ```
@@ -102,8 +88,6 @@ MrMarvel{aed5fe6c0a87d4e403b14c0c888ea199}
 ## Bonus: Intercepted transmission and the next challenge
 
 **Important scope distinction:** the flag above completes *Más allá de lo visible*. The repository's [`Pistas/README.md`](https://github.com/DarthAshmed/11-07-2023-Toronto/blob/main/Pistas/README.md) contains an additional challenge that leads toward a later WordPress puzzle. The following decoding steps are useful cryptography practice, but are **not necessary** for the 70-point flag.
-
-*Visual evidence: [Bonus transmission in the Pistas README — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=193s).*
 
 ### 4.1 Reverse and repeatedly decode Base64
 
@@ -131,8 +115,6 @@ The resulting **candidate password** is:
 L#@ws!OVanBc87%hJ5
 ```
 
-*Visual evidence: [CyberChef recipe with nested Base64 and Vigenère decryption — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=257s).*
-
 *Terminology note:* Base64 is an **encoding**, not encryption. Vigenère is the encryption step. When reconstructing the CyberChef recipe, letter case and operation order matter.
 
 ### 4.2 Decode Morse code to obtain the username
@@ -150,8 +132,6 @@ CAROLDANVERS
 ```
 
 The puzzle says the username has **two uppercase letters**, with the remainder lowercase. A plausible normalization is **`CarolDanvers`** (capital C and D). This is a **candidate username**; no subsequent WordPress login was independently verified in this write-up.
-
-*Visual evidence: [CyberChef output of Morse code — watch the source recording](https://www.youtube.com/watch?v=zk36oU2tL-Q&t=298s).*
 
 ### 4.3 Reproduce the transformations in Python
 
@@ -181,10 +161,11 @@ It prints all four Base64 intermediate stages, the Vigenère result, the Morse d
 4. **Decode in the right order.** A leading Base64 padding character was a useful sign that the string had been reversed, while repeated layers concealed the Vigenère ciphertext.
 5. **Label confidence correctly.** The flag was directly confirmed. The inferred follow-up login credentials were decoded but not tested here.
 
-## Source material and evidence provenance
+## References and documentation limits
 
-- [Original challenge GitHub repository](https://github.com/DarthAshmed/11-07-2023-Toronto) — verified challenge flag and encoded clues.
-- [Original bonus puzzle README](https://github.com/DarthAshmed/11-07-2023-Toronto/blob/main/Pistas/README.md) — exact intercepted strings and cipher hint.
-- [Video tutorial: *Más allá de lo visible*](https://www.youtube.com/watch?v=zk36oU2tL-Q&list=PLDo9DMLZyP6ki_F4Jv4NTOjFOnYHGon0y&index=2) — supplied walkthrough transcript and screenshots. The visual-evidence links lead to the original tutorial recording. No source-video stills are claimed as original captures by this repo's owner.
+- [Original CTF repository](https://github.com/DarthAshmed/11-07-2023-Toronto) — repository name, challenge title, and flag.
+- [Original bonus puzzle README](https://github.com/DarthAshmed/11-07-2023-Toronto/blob/main/Pistas/README.md) — encoded messages and cipher hint.
+
+I completed this challenge, but my original screenshot evidence is incomplete. The steps above explain the solution and can be followed or checked against the public CTF resources. Public challenge pages are used as references, **not as proof of my personal solve**. No third-party screenshots or recordings are included.
 
 *Educational use only. The documented activity concerns intentionally public CTF assets.*

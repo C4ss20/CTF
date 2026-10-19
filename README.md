@@ -1,6 +1,6 @@
 # CTF Writeups | Casandra Paulín
 
-A collection of structured capture-the-flag walkthroughs, focused on the **evidence**, **reasoning**, and **reproducibility** behind each finding.
+A collection of CTF challenges I have solved, documenting the **investigation process**, **technical reasoning**, and **reproducible analysis** behind each flag.
 
 > **Documentation standard:** challenge → observations → hypothesis → validation → outcome → lessons learned. These are controlled CTF exercises, not assessments of production environments.
 
@@ -13,19 +13,22 @@ A collection of structured capture-the-flag walkthroughs, focused on the **evide
 ## What these write-ups demonstrate
 
 - Correlating publicly available clues into testable hypotheses.
-- Maintaining an evidence trail instead of treating guesses as findings.
+- Explaining how each clue supports or rejects a testable hypothesis.
 - Distinguishing **encoding**, **encryption**, and plain-text identifiers.
 - Reproducing transformations with short, dependency-free Python scripts.
-- Documenting source material and limitations transparently.
+- Documenting verification methods and any gaps in retained proof transparently.
 
-## Evidence & attribution
+## Documentation and verification
 
-The first challenge was **reconstructed from user-provided screenshots and a public video tutorial**, then cross-checked against the challenge's original public GitHub resources. The referenced tutorial footage shows the walkthrough rather than a newly executed lab session. Visual evidence links point to the relevant moments in that recording. This distinction is intentional; it avoids attributing another person's actions to the repository owner.
+I solved the challenges documented in this repository. Some original session screenshots or terminal captures were not retained, so these write-ups reconstruct the investigation steps instead of presenting a complete contemporaneous evidence log.
 
-- [Tutorial video](https://www.youtube.com/watch?v=zk36oU2tL-Q&list=PLDo9DMLZyP6ki_F4Jv4NTOjFOnYHGon0y&index=2)
-- [Original challenge repository](https://github.com/DarthAshmed/11-07-2023-Toronto)
+Where possible, challenge details, flags, and decoding steps are rechecked against public CTF materials or with reproducible local scripts. These references **validate the explanation**, but do not serve as independent proof of my original solve. I do not present anyone else's screenshots or recordings as my own.
 
-Only intentionally public CTF assets were used for this documentation. The source challenge and footage remain the property of their respective creators; reproduction of stills here is for analysis and commentary with attribution.
+The original challenge materials belong to their creators.
+
+## Future challenges
+
+More write-ups from the same CTF will be added as their details are documented and verified.
 
 ## Repository layout
 
@@ -35,8 +38,6 @@ CTF/
 └── challenges/
     └── mas-alla-de-lo-visible/
         ├── README.md
-        ├── evidence/
-        │   └── README.md
         └── scripts/
             └── decode_clues.py
 ```
