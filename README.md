@@ -10,6 +10,7 @@ A collection of CTF challenges I have solved, documenting the **investigation pr
 | --- | --- | --- | --- | --- |
 | **Más allá de lo visible** | TheM4rv3ls CTF | OSINT, geolocation, GitHub discovery, encoding and cryptography | Flag verified | [Read walkthrough](challenges/mas-alla-de-lo-visible/README.md) |
 | **Intrusión en S.W.O.R.D.** | TheM4rv3ls CTF | Web log forensics, encoding detection, Braille decoding | Flag recovered; original archive not retained | [Read walkthrough](challenges/intrusion-en-sword/README.md) |
+| **Protectoras del Multi-Verso** | TheM4rv3ls CTF | WordPress authentication analysis, privilege abuse, server-side execution, Base64 | Flag recovered; historical lab | [Read walkthrough](challenges/protectoras-del-multi-verso/README.md) |
 
 ## What these write-ups demonstrate
 
@@ -41,10 +42,14 @@ CTF/
     │   ├── README.md
     │   └── scripts/
     │       └── decode_clues.py
-    └── intrusion-en-sword/
+    ├── intrusion-en-sword/
+    │   ├── README.md
+    │   └── scripts/
+    │       └── triage_logs.py
+    └── protectoras-del-multi-verso/
         ├── README.md
         └── scripts/
-            └── triage_logs.py
+            └── decode_flag.py
 ```
 
 The destination repository may contain unrelated files outside this documentation tree; these write-ups do not modify or remove them.
