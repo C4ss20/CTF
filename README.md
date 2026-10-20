@@ -14,6 +14,7 @@ A collection of CTF challenges I have solved, documenting the **investigation pr
 | **Energía Cifrada** | TheM4rv3ls CTF | .NET reverse engineering, PowerShell obfuscation, Base64/Gzip, MD5 and Collatz | Flag independently reproduced offline | [Read walkthrough](challenges/energia-cifrada/README.md) |
 | **Alerta de S.W.O.R.D.** | TheM4rv3ls CTF | PCAP analysis, HTTP object extraction, encrypted ZIP investigation, John the Ripper | Flag transcribed; original PCAP unavailable | [Read walkthrough](challenges/alerta-de-sword/README.md) |
 | **Sombras en el Sistema (Linux)** | TheM4rv3ls CTF | Linux forensic artifacts, user histories, cron persistence, MD5 | MD5 answer reproduced offline | [Read walkthrough](challenges/sombras-en-el-sistema-linux/README.md) |
+| **Sombras en el Sistema (Windows)** | TheM4rv3ls CTF | Windows Event ID 4625, Registry forensics, layered Base64, MD5 | Clue and MD5 verified offline | [Read walkthrough](challenges/sombras-en-el-sistema-windows/README.md) |
 
 ## What these write-ups demonstrate
 
@@ -31,9 +32,9 @@ Where possible, challenge details, flags, and decoding steps are rechecked again
 
 The original challenge materials belong to their creators. The challenge archives and source screenshots are not redistributed here.
 
-## Future challenges
+## TheM4rv3ls CTF collection
 
-More write-ups from the same CTF will be added as their details are documented and verified.
+**Seven challenges documented (810 total challenge points)** across OSINT, web security, network traffic analysis, Windows/Linux forensics, and reverse engineering. These challenge values are a sum of the published point values, not an independently validated scoreboard record. More artifacts may be added when available.
 
 ## Repository layout
 
@@ -61,10 +62,14 @@ CTF/
     │   ├── README.md
     │   └── scripts/
     │       └── inspect_zip.py
-    └── sombras-en-el-sistema-linux/
+    ├── sombras-en-el-sistema-linux/
+    │   ├── README.md
+    │   └── scripts/
+    │       └── verify_md5.py
+    └── sombras-en-el-sistema-windows/
         ├── README.md
         └── scripts/
-            └── verify_md5.py
+            └── recover_clue.py
 ```
 
 The destination repository may contain unrelated files outside this documentation tree; these write-ups do not modify or remove them.
