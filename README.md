@@ -11,6 +11,7 @@ A collection of CTF challenges I have solved, documenting the **investigation pr
 | **Más allá de lo visible** | TheM4rv3ls CTF | OSINT, geolocation, GitHub discovery, encoding and cryptography | Flag verified | [Read walkthrough](challenges/mas-alla-de-lo-visible/README.md) |
 | **Intrusión en S.W.O.R.D.** | TheM4rv3ls CTF | Web log forensics, encoding detection, Braille decoding | Flag recovered; original archive not retained | [Read walkthrough](challenges/intrusion-en-sword/README.md) |
 | **Protectoras del Multi-Verso** | TheM4rv3ls CTF | WordPress authentication analysis, privilege abuse, server-side execution, Base64 | Flag recovered; historical lab | [Read walkthrough](challenges/protectoras-del-multi-verso/README.md) |
+| **Energía Cifrada** | TheM4rv3ls CTF | .NET reverse engineering, PowerShell obfuscation, Base64/Gzip, MD5 and Collatz | Flag independently reproduced offline | [Read walkthrough](challenges/energia-cifrada/README.md) |
 
 ## What these write-ups demonstrate
 
@@ -46,10 +47,14 @@ CTF/
     │   ├── README.md
     │   └── scripts/
     │       └── triage_logs.py
-    └── protectoras-del-multi-verso/
+    ├── protectoras-del-multi-verso/
+    │   ├── README.md
+    │   └── scripts/
+    │       └── decode_flag.py
+    └── energia-cifrada/
         ├── README.md
         └── scripts/
-            └── decode_flag.py
+            └── recover_flag.py
 ```
 
 The destination repository may contain unrelated files outside this documentation tree; these write-ups do not modify or remove them.
